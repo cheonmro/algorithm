@@ -2,12 +2,16 @@
 
 function reverse(str) {
   // 이 곳에 코드를 작성해 주세요.
-  var arr = str.split('');
 
-  var reversedArr = arr.reverse();
+  // str -> array for each character
+  var arr = str.split(''); // ['h', 'e', 'l', 'l', 'o']
 
-  var joinArr = reversedArr.join('');
-
+  // reverse the array
+  var reversedArr = arr.reverse(); // [ 'o', 'l', 'l', 'e', 'h' ]
+  
+  // array -> string
+  var joinArr = reversedArr.join(''); // olleh
+  
   return joinArr;
 
 
