@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>float을 가상선택자 :after로 clear 하는 방법 예제</title>
+<style type="text/css">
+* {
+  margin: 0; padding:0; font-size:1em;
+  }
+body {
+  background: #fff; margin:10px; font-size:.75em;
+  }
+.header {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  }
+.container {
+  border: 2px solid #ccc;
+  background: #fff;
+  /* 1: 부모요소에 float 속성을 부여 */
+  /* float: left; */
+
+  /* 2: 부모요소에 overflow 속성을 부여 */
+  /* overflow: hidden; */
+}
+
+/* 가상 선택자 :after를 사용하는 방법 */
+.container:after{
+  content: "";
+  clear: both;
+  display: block;
+}
+.left {
+  float: left;
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #181818;
+  background: yellowgreen;
+  }
+.right {
+  float: right;
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #181818;
+  background: blue;
+  }
+
+/* 3: 빈 요소에 clear 속성을 부여 */
+/* .empty{
+  clear: both;
+} */
+
+.footer {
+  margin-top: 10px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  }
+
+</style>
+</head>
+<body>
+  <div class="header">
+    <p>header</p>
+  </div>
+  <div class="container">
+    <div class="left">
+      <p><strong>left </strong></p>
+    </div>
+    <div class="right">
+      <p><strong>right</strong></p>
+    </div>
+
+    <!--  3: 빈 요소에 clear 속성을 부여  -->
+    <!-- <div class="empty">
+      <p><strong><strong/></p>
+    </div> -->
+  </div>
+  <div class="footer">
+    <p>footer</p>
+  </div>
+</body>
+</html>
