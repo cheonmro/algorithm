@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>absolute</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 1em;
+    }
+    body {
+      background: #fff;
+      margin: 10px;
+      font-size: .75em;
+    }
+    .header {
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 2px solid #ccc;
+    }
+    .container {
+      border: 2px solid #ccc;
+      /* position: relative; */
+    }
+    .absolute1 {
+      /* position: absolute;
+      top: 0;
+      left: 0; */
+      width: 500px;
+      padding: 10px;
+      border: 1px solid #181818;
+      background: yellowgreen;
+    }
+    .absolute2 {
+      /* position: absolute; */
+
+      width: 400px;
+      padding: 10px;
+      border: 1px solid #181818;
+      background: blue;
+    }
+    .footer {
+      margin-top: 10px;
+      padding: 10px;
+      border: 2px solid #ccc;
+    }
+    .term{
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #aaa;
+      border-radius: 15px;
+      background: linear-gradient(to bottom, #aaa, #eee); 
+      position: relative;
+      width: 250px;
+    }
+    .term-heading{
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      font-size: 15px;
+      font-weight: bold;
+    }
+    .term-list{
+      margin-top: 30px;
+    }
+    .term-list::after{
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    .term-list-subject{
+      color: blue;
+      font-size: 12px;
+      font-weight: bold;
+      float: right;
+      width: 145px;
+    }
+    .term-list-thumbnail{
+      float: left;
+    }
+    .term-list-contents{
+      float: right;
+      width: 145px;
+      line-height: 15px;
+      margin-top: 10px;
+    }
+    .term-list-subject, .term-list-contents{
+      margin-right: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <p>header</p>
+  </div>
+  <div class="container">
+    <div class="absolute1">
+      <p>
+        <strong>absolute1</strong>
+      </p>
+    </div>
+    <div class="absolute2">
+      <p>
+        <strong>absolute2</strong>
+      </p>
+    </div>
+  </div>
+  <div class="footer">
+    <p>footer</p>
+  </div>
+
+  <section class="term">
+    <h2 class="term-heading">웹관련 용어</h2>
+    <dl class="term-list">
+      <dt class="term-list-subject"><span>웹표준이란?</span></dt>
+      <dd class="term-list-thumbnail">
+          <img src="web_standards.gif" alt="">
+      </dd>
+      <dd class="term-list-contents">W3C 단체에서 규정한 웹 기술 사양에 대한 규칙을 말하며 표준 규격은...</dd>
+    </dl>
+  </section>
+</body>
+</html>
